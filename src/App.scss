@@ -1,0 +1,109 @@
+// $font: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+
+// html {
+// 	font-size: 4px;
+// }
+
+// body {
+// 	margin: 0;
+// 	font-family: $font;
+// 	font-size: 16px;
+// 	-webkit-font-smoothing: antialiased;
+// 	-moz-osx-font-smoothing: grayscale;
+// }
+
+// $pad-top: 32px;
+// // $pad-horiz: 6.95rem;
+
+// @mixin header($max-width) {
+// 	max-width: $max-width;
+// }
+// @mixin header_auto2($w-width, $w-max) {
+// 	@media only screen and (min-width: $w-width) {
+// 		@include header($max-width: $w-max);
+// 	}
+// }
+// @mixin header_auto($w-width) {
+// 	@include header_auto2($w-width, calc($w-width - 32px));
+// }
+
+
+// .header {
+// 	padding: $pad-top 0 0 0;
+// 	width: calc((782px - 32px) + 256px);
+// 	margin-left: auto;
+// 	margin-right: auto;
+// 	display: flex;
+// 	flex-direction: row;
+// 	justify-content: space-between;
+// 	line-height: 1;
+
+// 	@include header($max-width: calc(100% - 32px));
+// 	@include header_auto(560px);
+// 	@include header_auto(640px);
+// 	@include header_auto(782px);
+// 	@include header_auto2(1024px, calc(100% - 32px));
+// }
+
+
+// .header > *:nth-child(2) {
+// 	margin-left: 100px;
+// }
+
+// .Title {
+// 	color: #303030;
+// 	font-weight: bold;
+// 	font-size: 2.25em;
+// 	text-align: start;
+// }
+
+// .Navbar {
+// 	display: flex;
+// 	align-items: center;
+// 	font-weight: bold;
+
+// 	* {
+// 		margin-right: 10px;
+// 	}
+// 	:last-child {
+// 		margin-right: 0;
+// 	}
+// }
+
+// .App {
+// 	padding: 10px;
+// }
+
+body {
+	overflow: hidden;
+}
+
+$imgTransform: -10%;
+
+@keyframes imgLoadAnimation {
+	0% {
+		opacity: 0;
+		transform: translateY($imgTransform);
+	}
+	20% {
+		transform: translateY($imgTransform);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(-10px);
+	}
+  }
+
+.start-textt {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
+	align-items: center;
+
+	img {
+		transform: translateY($imgTransform);
+		animation: 1s ease-out .75s 1 imgLoadAnimation;
+		animation-fill-mode: forwards;
+	}
+}
